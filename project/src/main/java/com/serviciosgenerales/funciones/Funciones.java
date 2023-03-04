@@ -47,6 +47,26 @@ public class Funciones {
 	 resultado.forEach(System.out::println);
 	 
 	 
+	//Utilizar reduce
+	 
+	 IntStream stNumeros1 = Arrays.stream(numeros);
+	 int resultado1 = stNumeros1.filter((x)->x%2 == 0).reduce(0,(x,y)->{
+		 System.out.println("X es "+x+ " Y es "+y);
+		 return x+y;
+	 });	
+	 System.out.println("Mi suma es "+resultado1);
+	 
+	 //Utiliza map
+	 IntStream stNumeros2 = Arrays.stream(numeros);
+	 int resultado2 = stNumeros2
+			 .map(x->x*2)
+			 .filter((x)->x%2 == 0)
+			 .reduce(0,(x,y)->{
+		 System.out.println("X es "+x+ " Y es "+y);
+		 return x+y;
+	 });	
+	 System.out.println("Mi suma es "+resultado2);
+	 
 	}
 	
 	//metodo
